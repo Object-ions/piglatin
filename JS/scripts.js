@@ -26,14 +26,12 @@ let sentence = "hello world night we are looking for something dumb to do";
 sentence = sentence.toLocaleUpperCase();
 let arrWords = [];
 let letters = [];
-let check1;
+let check = [];
 let afterJoin;
 
 function pigLatin(sentence) {
     arrWords = sentence.split(" ");
     // console.table(arrWords);
-
-    letters = []; 
     
     arrWords.forEach(function wordsToLetters(word, i) {
         // console.log(word, i);
@@ -42,21 +40,25 @@ function pigLatin(sentence) {
         console.log(letters[i]);
         // replaceFirst(letters)
     });
+    replaceFirst();
 }
 
-function replaceFirst(letters) {
-    console.log("original word: " + letters[0]);
+letters.forEach(function replaceFirst(letter, i) {
     
-    check1 = letters[0].shift();
-    console.log("before push: " + letters[0]);
+    console.log("original word: " + letters[i]);
     
-    letters[0].push(check1);
-    letters[0].push("A");
-    console.log("after push: " + letters[0]);
+    check[i] = letters[i].shift()
+    console.log("before push: " + letters[i]);
+    
+    letters[i].push(check1);
+    letters[i].push("A");
+    console.log("after push: " + letters[i]);
 
-    afterJoin = letters[0].join("");
+    afterJoin = letters[i].join("");
     console.log("after join: " + afterJoin);
-}
+});
+
+
 
 pigLatin(sentence);
 
