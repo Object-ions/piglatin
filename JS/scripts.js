@@ -22,43 +22,42 @@
 //     return wordCount;
 // }
 
-let sentence = "hello world night we are looking for something dumb to do";
+let sentence = "hello world";
 sentence = sentence.toLocaleUpperCase();
 let arrWords = [];
 let letters = [];
 let check = [];
-let afterJoin;
+let afterJoin = [];
 
 function pigLatin(sentence) {
     arrWords = sentence.split(" ");
     // console.table(arrWords);
-    
+    let outputString = "";
     arrWords.forEach(function wordsToLetters(word, i) {
         // console.log(word, i);
-        letters[i] = word.split("");
+        letters = word.split("");
 
-        console.log(letters[i]);
-        // replaceFirst(letters)
+        // console.log(letters[i]);
+        outputString = outputString + replaceFirst(letters) + "  ";
     });
-    replaceFirst();
+    console.log(outputString);
 }
 
-letters.forEach(function replaceFirst(letter, i) {
+function replaceFirst(letters) {
     
-    console.log("original word: " + letters[i]);
+    let newSentence = "";
+    let firstLetter = letters[0];
+    letters.shift();
+    letters.push(firstLetter);
+    letters.push("A");
+    newSentence = letters.join();
+
+    // console.log(newSentence);
+    return newSentence;
+
     
-    check[i] = letters[i].shift()
-    console.log("before push: " + letters[i]);
     
-    letters[i].push(check1);
-    letters[i].push("A");
-    console.log("after push: " + letters[i]);
-
-    afterJoin = letters[i].join("");
-    console.log("after join: " + afterJoin);
-});
-
-
+}
 
 pigLatin(sentence);
 
