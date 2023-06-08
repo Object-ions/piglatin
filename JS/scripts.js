@@ -21,43 +21,44 @@
 //     });
 //     return wordCount;
 // }
-let text;
-let sentence = "hello world"
-let words = [];
-let wordsSave = [];
+
+let sentence = "hello world night we are looking for something dumb to do";
+sentence = sentence.toLocaleUpperCase();
+let arrWords = [];
 let letters = [];
-let word1;
-let word2;
 let check1;
 let afterJoin;
 
 function pigLatin(sentence) {
-    words = sentence.split(" ");
-    console.table(words);
+    arrWords = sentence.split(" ");
+    // console.table(arrWords);
+
+    letters = []; 
     
-    word1 = words[0];
-    word2 = words[1];
-    console.log("word1: " + word1 + " word2: " + word2);
-    wordsToLetters(word1 , word2);
-}
+    arrWords.forEach(function wordsToLetters(word, i) {
+        // console.log(word, i);
+        letters[i] = word.split("");
 
-function wordsToLetters() {
-    letters[1] = word1.split("");
-    letters[2] = word2.split("");
-    console.log(letters[1]);
-
-    replaceFirst(letters)
+        console.log(letters[i]);
+        // replaceFirst(letters)
+    });
 }
 
 function replaceFirst(letters) {
-    check1 = letters[1].shift();
-    letters[1].push(check1);
-    letters[1].push("a")
+    console.log("original word: " + letters[0]);
     
-    console.log("after push: " + letters[1]);
+    check1 = letters[0].shift();
+    console.log("before push: " + letters[0]);
+    
+    letters[0].push(check1);
+    letters[0].push("A");
+    console.log("after push: " + letters[0]);
 
-    afterJoin = letters[1].join("");
+    afterJoin = letters[0].join("");
     console.log("after join: " + afterJoin);
 }
+
+pigLatin(sentence);
+
 
 
